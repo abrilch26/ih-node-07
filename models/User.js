@@ -5,7 +5,14 @@ const mongoose = require ("mongoose")
 //2. SCHEMA
 const userSchema = mongoose.Schema({
     username: String,
-    email: String,
+    email: {
+        type: String,
+        required: [true, "Email es requerido."],
+        match: [/^\S+@\S+\.\S+$/, "Por favor, ingresa un email válido."], //regex del email
+        unique: true, //unico email en la base de datos
+        lowercase: true, //minúsculas
+        trim: true //sin espacios vacios
+    },
     passwordEncriptado: String
 })
 

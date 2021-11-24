@@ -5,12 +5,14 @@
     <input type="text" name="username" placeholder="ironhacker" />
     
     <label>Email</label>
-    <input type="email" name="email" placeholder="rockstar@ironhack.com" />
+    <input type="text" name="email" placeholder="rockstar@ironhack.com" />
     
     <label>Password</label>
 	<input type="password" name="password" placeholder="********" />
 
     <button type="submit">Crear cuenta</button>
-
   </form>
+  {{#if errorMessage}}
+     <p class="error">{{errorMessage}}</p>
+  {{/if}}
 </div>
